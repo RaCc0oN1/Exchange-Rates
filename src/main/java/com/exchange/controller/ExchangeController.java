@@ -1,13 +1,10 @@
-package controller;
+package com.exchange.controller;
 
-import net.minidev.json.parser.ParseException;
-import org.json.*;
-import net.minidev.json.parser.JSONParser;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -16,14 +13,15 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-@RestController
+@Controller
+@RequestMapping("/")
 public class ExchangeController {
 
     // App Id - 08f1861f20c248c09ee0a7f6daa9be5f
     // Latest - https://openexchangerates.org/api/latest.json?app_id=08f1861f20c248c09ee0a7f6daa9be5f&symbols=Rub
     // Yesterday -https://openexchangerates.org/api/historical/<DATE>.json?app_id=08f1861f20c248c09ee0a7f6daa9be5f&symbols=rub
 
-    @GetMapping("/")
+    @GetMapping
     public String ex(Model model) {
         model.addAttribute("url", giphy());
 
