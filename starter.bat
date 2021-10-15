@@ -1,0 +1,1 @@
+java -jar build/libs/Exchange-Rates-0.0.1-SNAPSHOT.jar
